@@ -891,7 +891,7 @@ nav ul {
 }
 
 /* ==================== 13. Committees Cards ==================== */
-.committees-grid {
+/* .committees-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
@@ -934,10 +934,10 @@ nav ul {
 .committee-desc {
     color: #666;
     line-height: 1.6;
-}
+} */
 
 /* ==================== 14. Chapters Items ==================== */
-.chapters-container {
+/* .chapters-container {
     margin-top: 30px;
 }
 
@@ -984,7 +984,7 @@ nav ul {
     color: #666;
     margin: 0;
     font-size: 14px;
-}
+} */
 
 /* ==================== 15. FAQ Accordion ==================== */
 .faq-container {
@@ -2266,14 +2266,23 @@ footer {
 
 
 
+
+
 /* تنسيق صفحة Coming Soon للـ Blogs */
 .blogs-coming-soon {
     min-height: 80vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #fdfdfd; /* لون خلفية هادئ */
+    /* background: #fdfdfd;   */
+    background: rgba(253, 253, 253, 0.5);  
+    backdrop-filter: blur(10px); 
+    -webkit-backdrop-filter: blur(10px); /* عشان يشتغل على Safari */
+    backdrop-filter: blur(10px); /* بيدي شكل زجاجي شيك */
+    border: 1px solid rgba(255, 255, 255, 0.2);
     text-align: center;
+    position: relative; 
+    z-index: 1;
 }
 
 .coming-soon-content {
@@ -2305,7 +2314,7 @@ footer {
 .launch-progress {
     width: 100%;
     height: 10px;
-    background: #eee;
+    /* background: #eee; */
     border-radius: 10px;
     overflow: hidden;
     margin-bottom: 20px;
@@ -2343,3 +2352,118 @@ footer {
     .coming-soon-content h1 { font-size: 2rem; }
     .icon-box { font-size: 3rem; }
 }
+
+header {
+    background: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 10px 20px;
+    border-radius: 50px; /* خليه بيضاوي */
+    width: calc(100% - 40px);
+}
+
+
+
+.icon-box i {
+    text-shadow: 0 0 20px rgba(0, 98, 155, 0.4);
+}
+
+.stay-tuned {
+    text-shadow: 0 0 10px rgba(0, 98, 155, 0.2);
+    animation: pulse-text 2s infinite alternate;
+}
+
+@keyframes pulse-text {
+    from { opacity: 0.5; }
+    to { opacity: 1; }
+}
+
+
+
+/* 
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+} */
+
+
+
+
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+
+ 
+.blobs {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: -1;
+    filter: blur(80px); 
+    opacity: 0.4;
+}
+
+.blob-1 {
+    position: absolute;
+    width: 400px; height: 400px;
+    background: #00629b;
+    border-radius: 50%;
+    top: -100px; left: -100px;
+    animation: blob-move 15s infinite alternate;
+}
+
+.blob-2 {
+    position: absolute;
+    width: 300px; height: 300px;
+    background: #078bff;
+    border-radius: 50%;
+    bottom: 100px; right: 100px;
+    animation: blob-move 10s infinite alternate-reverse;
+}
+
+@keyframes blob-move {
+    from { transform: translate(0, 0); }
+    to { transform: translate(100px, 100px); }
+} 
+
+
+
+
+
+
+
+
+.ieee-bg-text {
+    position: fixed; /* ثابتة مع السكرول */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40vw; /* حجم عملاق بالنسبة لعرض الشاشة */
+    font-weight: 900;
+    
+    /* جعل النص مفرغ (Outline) */
+    color: transparent;
+    -webkit-text-stroke: 1px rgba(53, 169, 237, 0.642); /* لون IEEE الأزرق بشفافية 5% فقط */
+    
+    z-index: -1; /* خلف كل العناصر */
+    user-select: none; /* عشان الزائر ميعرفش يعمل لها Highlight */
+    pointer-events: none; /* عشان متبطأش الضغط على الأزرار */
+    letter-spacing: 20px;
+    
+    /* أنيميشن حركة خفيفة جداً للنبض */
+    animation: floating-ieee 10s ease-in-out infinite alternate;
+}
+
+@keyframes floating-ieee {
+    from {
+        transform: translate(-50%, -48%) scale(1);
+    }
+    to {
+        transform: translate(-50%, -52%) scale(1.05);
+    }
+}
+
