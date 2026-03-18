@@ -3253,21 +3253,21 @@ const countdownTask = setInterval(function() {
 
 
 
-// window.addEventListener('scroll', function() {
-//     const bgText = document.querySelector('.ieee-bg-text');
-//     let scrollValue = window.scrollY;
-//     // الكلمة هتتحرك ببطء شديد مع السكرول
-//     bgText.style.transform = `translate(-50%, calc(-50% + ${scrollValue * 0.1}px))`;
-// });
-
-
-
-document.addEventListener("mousemove", (e) => {
-    const bg = document.querySelector(".ieee-bg-text");
-    const x = (window.innerWidth - e.pageX * 2) / 100;
-    const y = (window.innerHeight - e.pageY * 2) / 100;
-    bg.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`;
+window.addEventListener('scroll', function() {
+    const bgText = document.querySelector('.ieee-bg-text');
+    let scrollValue = window.scrollY;
+    // الكلمة هتتحرك ببطء شديد مع السكرول
+    bgText.style.transform = `translate(-50%, calc(-50% + ${scrollValue * 0.1}px))`;
 });
+
+
+
+// document.addEventListener("mousemove", (e) => {
+//     const bg = document.querySelector(".ieee-bg-text");
+//     const x = (window.innerWidth - e.pageX * 2) / 100;
+//     const y = (window.innerHeight - e.pageY * 2) / 100;
+//     bg.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px))`;
+// });
 
 
 
